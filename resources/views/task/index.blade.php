@@ -52,7 +52,7 @@
                         <td class="shadow-sm">{{ $user['address'] }}</td>
                         <td class="shadow-sm">{{ $user['gender'] }}</td>
                         <td class="shadow-sm">
-                            <img src="{{ asset('storage/' . $user['image']) }}" alt="User Image" style="height: 30px;">
+                            <a href="{{ asset('storage/' . $user['image']) }}" download><img src="{{ asset('storage/' . $user['image']) }}" alt="User Image" style="height: 30px;"></a>
                         </td>
                         <td class="shadow-sm">
                             <button type="button" class="btn p-0" data-toggle="modal" data-target="#editUserModal{{ $index }}">
