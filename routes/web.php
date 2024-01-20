@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Task\TaskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+//route for listing user
+Route::get("/",[TaskController::class,"index"])->name("index");
+//route for create new user
+Route::post('users/store', [TaskController::class, 'store'])->name('users.store');
+//route for delete the user
+Route::delete('/users/{index}/destroy', [TaskController::class, 'destroy'])->name('users.destroy');
+//route for update user
+Route::put('/users/{index}/update', [TaskController::class, 'update'])->name('users.update');
